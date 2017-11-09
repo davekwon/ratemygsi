@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gsis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Course</th>
+      <th>Rating</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gsis.each do |gsi| %>
+      <tr>
+        <td><%= gsi.name %></td>
+        <td><%= gsi.course %></td>
+        <td><%= gsi.rating %></td>
+        <td><%= gsi.comment %></td>
+        <td><%= link_to 'Show', gsi %></td>
+        <td><%= link_to 'Edit', edit_gsi_path(gsi) %></td>
+        <td><%= link_to 'Destroy', gsi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gsi', new_gsi_path %>

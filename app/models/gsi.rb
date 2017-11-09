@@ -1,0 +1,2 @@
+class Gsi < ApplicationRecord
+end

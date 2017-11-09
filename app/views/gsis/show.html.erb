@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @gsi.name %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @gsi.course %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @gsi.rating %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @gsi.comment %>
+</p>
+
+<%= link_to 'Edit', edit_gsi_path(@gsi) %> |
+<%= link_to 'Back', gsis_path %>

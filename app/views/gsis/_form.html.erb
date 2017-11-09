@@ -1,0 +1,37 @@
+<%= form_with(model: gsi, local: true) do |form| %>
+  <% if gsi.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gsi.errors.count, "error") %> prohibited this gsi from being saved:</h2>
+
+      <ul>
+      <% gsi.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :gsi_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :course %>
+    <%= form.text_field :course, id: :gsi_course %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.text_field :rating, id: :gsi_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_field :comment, id: :gsi_comment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
