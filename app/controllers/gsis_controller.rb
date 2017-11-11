@@ -1,5 +1,6 @@
 class GsisController < ApplicationController
   before_action :set_gsi, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /gsis
   # GET /gsis.json
@@ -14,7 +15,7 @@ class GsisController < ApplicationController
 
   # GET /gsis/new
   def new
-    @gsi = Gsi.new
+    @gsi = current_user.gsis.build
   end
 
   # GET /gsis/1/edit
@@ -24,7 +25,7 @@ class GsisController < ApplicationController
   # POST /gsis
   # POST /gsis.json
   def create
-    @gsi = Gsi.new(gsi_params)
+    @gsi = current_user.gsis.build(gsi_params)
 
     respond_to do |format|
       if @gsi.save
