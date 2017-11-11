@@ -1,1 +1,1 @@
-updated!!
+Using this application, students can rate their GSIs and leave a comment. Students can also search by GSI name, read other students’ reviews, and vote whether the review was helpful or not helpful.
