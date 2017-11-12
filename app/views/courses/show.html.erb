@@ -1,42 +1,43 @@
 <h1><%= @course.name %>'s Reviews</h1>
 
-<h2>Browse by GSIs</h2>
-<!-- FIXME
-@gsiForThisCourse = Gsi.where(course_id: @course.id)
-<% @gsiForThisCourse.each do |g| %>
-	
-	<%= link_to g.name, gsi_path(g) %>
-	
-	gsi name //FIXME
-	<br />
-
-<% end %>
--->
 
 
-<h2>All reviews</h2>
-
-<!-- FIXME
-<% @course.gsis.each do |g| %>
-	<% @g.reviews.each do |r| %>
-		
-		<h3><%= link_to g.name, gsi_path(g) %> </h3> <br />
-		<%= link_to r.user.name, user_path(r.user) %> <br />
-		says: <%= r.content %> <br />
-		<%= r.clarity %>/10 <br />
-		<%= r.attitude %>/10 <br />
-		<%= r.problem %>/10 <br />
-		<%= r.concept %>/10 <br />
-		
-		review details //FIXME
+<% if @gsiForThisCourse.size > 0 %>
+	<h2>Browse by GSIs</h2>
+	<% @gsiForThisCourse.each do |g| %>
+		<%= link_to g.name, gsi_path(g) %>
+		//FIXME
 		<br />
 	<% end %>
 	<br />
+
+	<h2>All reviews</h2>
+	<% @gsiForThisCourse.each do |g| %>
+		<% @reviewForThisCourse = Review.where(gsi: g) %>
+		<% if @reviewForThisCourse.size > 0 %>
+			
+			<% @reviewForThisCourse.each do |r| %>
+					<strong><%= link_to g.name, gsi_path(g) %></strong><br />
+					<%= r.user.email %> <br />
+					says: <%= r.content %> <br />
+					Clarity <%= r.clarity %>/10 <br />
+					Attitude <%= r.attitude %>/10 <br />
+					Problem <%= r.problem %>/10 <br />
+					Concept <%= r.concept %>/10 <br />
+					
+					review details //FIXME
+					<br />
+				<br />
+			<% end %>
+		<% end %>
+	<% end %>
+
+
+<br />
+<br />
 <% end %>
--->
 
-
-<h2> Post a Review for a new GSI for <%= @course.name %> </h2>
+<h2> Review a new GSI for <%= @course.name %> </h2>
 
 <%= form_for Gsi.new, url: course_path(@course) do |f| %>
 	Name: <%= f.text_field :name %>
@@ -47,4 +48,4 @@
 Post new review //FIXME
 
 <br />
-<%= link_to "Back to Home", root_path %>
+<%= link_to "Homepage", root_path %>

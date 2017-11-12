@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get '/courses/:id', to: 'courses#show', as: 'course'
 
   post "/courses/:id", to: "gsis#create"
-  get '/gsis/:id', to: 'gsis#show', as: 'gsi'
+  # get '/gsis/:id', to: 'gsis#show', as: 'gsi'
+  post "/gsis/:id", to: "reviews#create"
 end

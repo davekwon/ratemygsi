@@ -8,7 +8,8 @@ class CoursesController < ApplicationController
 		@course.name = params[:course][:name]
 		@course.save
 		if @course.valid?
-			redirect_to course_path([:course][:id])
+			puts params
+			redirect_to root_path
 		else
 			flash[:error] = @course.errors.full_messages.to_sentence
 			redirect_to pageToNewCourse_path
@@ -21,5 +22,6 @@ class CoursesController < ApplicationController
 
 	def show
 		@course = Course.find(params[:id])
+		@gsiForThisCourse = Gsi.where(course: @course.id)
 	end
 end

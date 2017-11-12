@@ -4,16 +4,17 @@ class ReviewsController < ApplicationController
   	gsi = Gsi.find(params[:id])
   	review = Review.new
   	review.user = current_user
-  	review.restaurant = restaurant
+  	review.gsi = gsi
+
   	review.update(review_params)
   	review.save
-  	redirect_to restaurant_path(restaurant)
+  	redirect_to gsi_path(gsi.id)
   end
 
   private
 
   def review_params
-  	params.require(:review).permit(:content, :clarity. :attitude, :problem, :concept)
+  	params.require(:review).permit(:content, :clarity, :attitude, :problem, :concept)
   end
 
 end
