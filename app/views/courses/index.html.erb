@@ -1,0 +1,8 @@
+<h1> All Courses </h1>
+
+<% @courses.each do |r| %>
+	<h1><%= link_to r.name, course_path(r.id) %></h1>
+	<br />
+<% end %>
+
+  <%= button_to "Didn't see your course? Add it now!", pageToNewCourse_path, :class => "button medium", :method => :get %>
