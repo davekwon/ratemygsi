@@ -17,4 +17,8 @@ class ReviewsController < ApplicationController
   	params.require(:review).permit(:content, :clarity, :attitude, :problem, :concept)
   end
 
+  def edit
+
+  end
+
 end

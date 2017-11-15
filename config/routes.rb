@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   post "/courses/:id", to: "gsis#create"
   # get '/gsis/:id', to: 'gsis#show', as: 'gsi'
   post "/gsis/:id", to: "reviews#create"
+  get "/profile", to: 'users#show'
 end
