@@ -1,0 +1,51 @@
+<h1>
+  <strong>Name:</strong>
+  <%= @gsi.name %>
+</h1>
+
+<h1>
+  <strong>Course:</strong>
+  <%= @course.name %>
+</h1>
+
+<% @reviewForThisCourse = Review.where(gsi: @gsi) %>
+
+<% if @reviewForThisCourse.size > 0 %>
+	<h2> Review <%= @gsi.name %> for <%= @course.name %> </h2>
+	<% @reviewForThisCourse.each do |r| %>
+			<%= r.user.email %> <br />
+			says: <%= r.content %> <br />
+			Clarity <%= r.clarity %>/10 <br />
+			Attitude <%= r.attitude %>/10 <br />
+			Problem <%= r.problem %>/10 <br />
+			Concept <%= r.concept %>/10 <br />
+			
+			review details //FIXME
+			<br />
+		<br />
+	<% end %>
+
+<% end %>
+ 
+
+
+
+
+<h2> Leave a new review </h2>
+
+<%= form_for Review.new, url: gsi_path(@gsi) do |f| %>
+	Comment: <%= f.text_area :content %>
+	<br />
+	Clarity: <%= f.number_field :clarity %>
+	<br />
+	Attitude: <%= f.number_field :attitude %>
+	<br />
+	Problem: <%= f.number_field :problem %>
+	<br />
+	Concept: <%= f.number_field :concept %>
+	<br />
+	<%= f.submit %>
+<% end %>
+
+<%= link_to 'Back', course_path(@course) %> | 
+<%= link_to 'Homepage', root_path %>
