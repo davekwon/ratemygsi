@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   # get '/gsis/:id', to: 'gsis#show', as: 'gsi'
   post "/gsis/:id", to: "reviews#create"
   get "users/profile/:id", to: 'users#show', as: "user_profile"
+  delete "/sign_out", to: 'users#destroy'
 end
