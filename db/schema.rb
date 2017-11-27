@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20171114044539) do
     t.index ["gsi_id"], name: "index_courses_on_gsi_id"
   end
 
-  create_table "courses_gses", id: false, force: :cascade do |t|
+  create_table "courses_gsis", id: false, force: :cascade do |t|
     t.integer "course_id", null: false
-    t.integer "gse_id", null: false
+    t.integer "gsi_id", null: false
   end
 
   create_table "gsis", force: :cascade do |t|

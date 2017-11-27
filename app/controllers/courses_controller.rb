@@ -17,7 +17,7 @@ class CoursesController < ApplicationController
 	end
 
 	def index
-		@curUserId = current_user.id
+		# @curUserId = current_user.id
 		@courses = Course.all
 	end
 
