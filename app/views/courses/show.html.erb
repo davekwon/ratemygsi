@@ -1,3 +1,6 @@
+<%= render "layouts/navigation" %>
+
+
 <h1><%= @course.name %>'s Reviews</h1>
 
 
@@ -18,7 +21,7 @@
 			
 			<% @reviewForThisCourse.each do |r| %>
 					<strong><%= link_to g.name, gsi_path(g) %></strong><br />
-					<%= r.user.email %> <br />
+					<%= r.user.username %> <br />
 					says: <%= r.content %> <br />
 					Clarity <%= r.clarity %>/10 <br />
 					Attitude <%= r.attitude %>/10 <br />

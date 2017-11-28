@@ -1,3 +1,4 @@
+<%= render "layouts/navigation" %>
 <h1>
   <strong>Name:</strong>
   <%= @gsi.name %>
@@ -13,7 +14,7 @@
 <% if @reviewForThisCourse.size > 0 %>
 	<h2> Review <%= @gsi.name %> for <%= @course.name %> </h2>
 	<% @reviewForThisCourse.each do |r| %>
-			<%= r.user.email %> <br />
+			<%= r.user.username %> <br />
 			says: <%= r.content %> <br />
 			Clarity <%= r.clarity %>/10 <br />
 			Attitude <%= r.attitude %>/10 <br />

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   resources :gsis
   root 'courses#index'
   get "/allCourses", to: "courses#index", as: "allCourses"
