@@ -1,14 +1,206 @@
-<h1> All Courses </h1>
+
+ 
+ 
+<html>
+
+  <head>
+    <title>Ratemygsi</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Ruby on Rails">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
 
 
-<% @courses.each do |r| %>
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        background-color: #656565;
+        border-color: #656565;;
+      }
+      .name {
+        font-family: 'Paytone One', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        word-spacing: 2px;
+        padding: 15px;
+        padding-bottom: 30px; 
+      }
+      .description {
+        font-family: 'Roboto', sans-serif;
+        text-transform: none; 
+      }
+      .glyphicon {
+    font-size: 10px;
+
+}
+.button {
+	margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+      /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+      .row.content {height: 450px}
+      
+      /* Set gray background color and 100% height */
+      .sidenav {
+        padding-top: 20px;
+        background-color: #f1f1f1;
+        height: 700px;
+      }
+      .rightnav {
+        padding-right: 0px;
+        padding-left: 10px;
+      }
+      .everything {
+        padding-left: 0px; 
+        padding-right: 0px;
+      }
+      /* Set black background color, white text and some padding */
+      footer {
+        background-color: #656565;
+        color: white;
+        padding: 15px;
+
+      }
+
+      
+      /* On small screens, set height to 'auto' for sidenav and grid */
+      @media screen and (max-width: 767px) {
+        .sidenav {
+          height: auto;
+          padding: 15px;
+        }
+        .row.content {height:auto;} 
+      }
+    </style>
+</head>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Rate My GSI</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="<%=new_user_session_path%>">Login</a></li>
+        <li><a href="<%=button_to "sign out", destroy_user_session_path, :method =>:delete%>"></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+     <h4>Subjects</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Math</a></li>
+        <li><a href="#section2">Computer Science</a></li>
+        <li><a href="#section3">English</a></li>
+        <li><a href="#section3">Psychology</a></li>
+      </ul><br>
+    </div>
+-->
+  <div class="container-fluid everything">
+    <div class="container-fluid col-sm-3 sidenav">
+      <div class="courses text-center"><h3>COURSES</h3></div>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"> Mathematics <span class="glyphicon glyphicon-chevron-down"></span></a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body"><a href="#">Mathematics 53</a></div>
+        <div class="panel-body"><a href="#">Mathematics 54</a></div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Computer Science <span class="glyphicon glyphicon-chevron-down"></span></a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body"><a href="#">Computer Science 61a</a></div>
+        <div class="panel-body"><a href="#">Computer Science 61b</a></div>
+        <div class="panel-body"><a href="#">Computer Science 61c</a></div>
+        <div class="panel-body"><a href="#">Computer Science 70</a></div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Psychology <span class="glyphicon glyphicon-chevron-down"></span></a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body"><a href="#">Psychology 1</a></div>
+        <div class="panel-body"><a href="#">Psychology 2</a></div>
+        <div class="panel-body"><a href="#">Psychology 164</a></div>
+      </div>
+    </div>
+    <% @courses.each do |r| %>
 	<h1><%= link_to r.name, course_path(r.id) %></h1>
 	<br />
 <% end %>
-
-  <%= button_to "Didn't see your course? Add it now!", pageToNewCourse_path, :class => "button medium", :method => :get %>
-
-  <%= button_to "Sign in", new_user_session_path, :class => "button medium", :method => :get %>
+  </div> 
+</div>
 
 
-  <%= button_to "Sign out", destroy_user_session_path, :class => "button medium", :method => :delete %> 
+<div class="container rightnav">
+    <div class="col-sm-9 text-center"> 
+      <div class="name"><h1>Rate My GSI</h1>
+        <div class="description"<h5>A resource for UC Berkeley students.</div></h5></div>
+      <h4>Don't see your course? Add it now!</h4>
+        
+
+            <!--<datalist id="Country">
+            <option value="India">
+            <option value="Italy">
+            <option value="Iran">
+            <option value="Israel">
+            <option value="Indonesia">
+            </datalist>-->
+
+        <div class="button"><a href="<%= pageToNewCourse_path %>">
+          <button class="btn btn-default" type="button">ADD NEW COURSE
+          </button>
+          </a>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <footer class="container-fluid text-center fixed-bottom">
+  <p>Rate My GSI</p>
+  </footer>
+  
+  </body>
+</html>
