@@ -8,7 +8,7 @@ Finding a good course taught by a good professor is important. Finding a good GS
 
 ## Installation
 
-In the directory of your choice, run ```git clone https://github.com/davekwon/ratemygsi.git```
+In the directory of your choice, run ```git clone https://github.com/davekwon/ratemygsi.git``` and ```cd ratemygsi```
 
 Run ```bundle install```,  ```rake db:migrate```, and ```rake db:seed``` to set up the environment
 
