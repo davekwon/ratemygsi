@@ -10,7 +10,7 @@ Using this application, students can rate their GSIs and leave a comment. Studen
 
 ## Authors
 
-* **Dave Kwon
-* **Mesut Yang
-* **Jenny Shangjun Jiang
-* **Meejin Choi
+* Dave Kwon
+* Mesut Yang
+* Jenny Shangjun Jiang
+* Meejin Choi
