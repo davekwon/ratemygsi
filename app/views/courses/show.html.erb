@@ -1,3 +1,6 @@
+<%= render "layouts/navigation" %>
+
+
 <h1><%= @course.name %>'s Reviews</h1>
 
 
@@ -5,8 +8,7 @@
 <% if @gsiForThisCourse.size > 0 %>
 	<h2>Browse by GSIs</h2>
 	<% @gsiForThisCourse.each do |g| %>
-		<%= link_to g.name, gsi_path(g) %>
-		//FIXME
+		<h3> <%= link_to g.name, gsi_path(g) %> </h3>
 		<br />
 	<% end %>
 	<br />
@@ -18,14 +20,23 @@
 			
 			<% @reviewForThisCourse.each do |r| %>
 					<strong><%= link_to g.name, gsi_path(g) %></strong><br />
-					<%= r.user.email %> <br />
-					says: <%= r.content %> <br />
+					<%= r.user.username %>     says: <%= r.content %> <br />
 					Clarity <%= r.clarity %>/10 <br />
 					Attitude <%= r.attitude %>/10 <br />
 					Problem <%= r.problem %>/10 <br />
 					Concept <%= r.concept %>/10 <br />
-					
-					review details //FIXME
+					<% if r.score > 0 %>
+						<% if r.score == 1 %>
+							Upvoted by 1 student <br />
+						<% else %>
+							Upvoted by <%= r.score %> students <br />
+						<% end %>
+					<% end %>
+					<%= form_for r.upvotes.build do |f| %>
+					  <%= f.hidden_field :user_id, value: current_user.id %>
+					  <%= f.hidden_field :review_id, value: r.id %>
+					  <%= f.submit 'Upvote', class: 'upvote-submit' %>
+					<% end %>
 					<br />
 				<br />
 			<% end %>

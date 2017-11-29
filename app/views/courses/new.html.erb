@@ -1,3 +1,5 @@
+<%= render "layouts/navigation" %>
+
 <h3>Adding a new course to the database</h3>
 <%= simple_form_for @course, url: createCourse_path(@course), :method => :post  do |f| %>
   <%= f.input :name, label: 'Name for the new course' %>
