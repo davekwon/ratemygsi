@@ -10,7 +10,7 @@
 # Make Users
 
 
-uArr = %w(tourist moejy0viiiiiv W4yneb0t TakanashiRikka Petr dotorya izrak Um_nik anta)
+uArr = %w(tourist moejy0viiiiiv W4yneb0t TakanashiRikka Petr dotorya izrak Um_nik anta jszet seprt Moer)
 numUser = uArr.size
 uArr.each do |name|
   User.create!({:email => name+"@gmail.com", :username => name, :password => "111111", :password_confirmation => "111111" })
@@ -36,7 +36,7 @@ lALen = lnArr.size
 end
 
 # Make Reviews
-numReview= 120
+numReview= 200
 rArr = ["OK, but would not recommend", "Better than the professor", "Among the best", "Concept well explained.", "Hash grader, watch out.", "Don't care about students", "Think students are waste of time", "Great GSI. Recommend to everyone.", "Lol", "Among the best GSI I have ever had", "Average, it is OK", "Not my style of GSI. Focusing too much on explaination", "Lots of problem coverage. Really like it!", "Pretty good. Would recommend", "Brought us candies in the last section. Lol", "Went to his office hours. REALLY HELPFUL!", "I changed my major because of this GSI.", "Lit this class on fire!", "Would take another class with this GSI again."]
 rALen = rArr.size
 (1..numReview).step(1) do |n|

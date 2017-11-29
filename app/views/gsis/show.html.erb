@@ -29,10 +29,12 @@
 					Upvoted by <%= r.score %> students <br />
 				<% end %>
 			<% end %>
-			<%= form_for r.upvotes.build do |f| %>
-			  <%= f.hidden_field :user_id, value: current_user.id %>
-			  <%= f.hidden_field :review_id, value: r.id %>
-			  <%= f.submit 'Upvote', class: 'upvote-submit' %>
+			<% if user_signed_in? %>
+				<%= form_for r.upvotes.build do |f| %>
+				  <%= f.hidden_field :user_id, value: current_user.id %>
+				  <%= f.hidden_field :review_id, value: r.id %>
+				  <%= f.submit 'Upvote', class: 'upvote-submit' %>
+				<% end %>
 			<% end %>
 			<br />
 		<br />
