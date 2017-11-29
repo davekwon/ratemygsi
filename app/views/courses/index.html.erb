@@ -81,6 +81,14 @@
 
       }
 
+      .added-course {
+        text-decoration: none; 
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+      }
+      .added-course-name:visited {
+
+      }
       
       /* On small screens, set height to 'auto' for sidenav and grid */
       @media screen and (max-width: 767px) {
@@ -106,7 +114,6 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="<%=new_user_session_path%>">Login</a></li>
-        <li><a href="<%=button_to "sign out", destroy_user_session_path, :method =>:delete%>"></a></li>
       </ul>
     </div>
   </div>
@@ -124,10 +131,10 @@
       </ul><br>
     </div>
 -->
-  <div class="container-fluid everything">
-    <div class="container-fluid col-sm-3 sidenav">
+   <!--<div class="container-fluid everything">-->
+    <div class="container col-sm-3 sidenav">
       <div class="courses text-center"><h3>COURSES</h3></div>
-  <div class="panel-group" id="accordion">
+  <!--<div class="panel-group" id="accordion">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
@@ -163,11 +170,12 @@
         <div class="panel-body"><a href="#">Psychology 2</a></div>
         <div class="panel-body"><a href="#">Psychology 164</a></div>
       </div>
-    </div>
+    </div>-->
+    <div class="added-course text-center">
     <% @courses.each do |r| %>
-	<h1><%= link_to r.name, course_path(r.id) %></h1>
-	<br />
-<% end %>
+	   <div class="added-course-name"><%= link_to r.name, course_path(r.id) %></div><br/>
+    <% end %>
+  </div>
   </div> 
 </div>
 
@@ -176,7 +184,8 @@
     <div class="col-sm-9 text-center"> 
       <div class="name"><h1>Rate My GSI</h1>
         <div class="description"<h5>A resource for UC Berkeley students.</div></h5></div>
-      <h4>Don't see your course? Add it now!</h4>
+      <h4>Don't see your course? Add it now! </h4>
+      <h4>Then access the course from the left!</h4>
         
 
             <!--<datalist id="Country">
