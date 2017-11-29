@@ -2,6 +2,9 @@
 
 Using this application, students can rate their GSIs and leave a comment. Students can also search by GSI name, read other students’ reviews, and vote whether the review was helpful or not helpful.
 
+# Motivation
+
+Finding a good course taught by a good professor is important. Finding a good GSI(TA), however, can be as important as that because students often learn from diecussion sections/labs as much as what they learn from lecture. There are lots of review websites for professors and courses but none for GSIs(TAs). We thought this website would serve Berkeley students who want to get to know about GSIs' teadching styles to help them find an ideal GSI depending on individual's learning style.
 
 ## Getting Started
 
