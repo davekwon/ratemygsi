@@ -78,7 +78,7 @@ Then run ```rails server``` and on your browser, go to ```localhost:3000``` and 
 ## Division of Labor
 
 - Dave Kwon & Mesut Yang: Make structural design of the website (back-end, made models and associations, made seeds)
-- Shangjun Jiang & Meejin Choi: Make user interface design of the website (front-end, HTML/CSS/JavaScript/bootstrap)
+- Shangjun Jiang & Meejin Choi: Make user interface design of the website (front-end, HTML/CSS/JavaScript/bootstrap), also created the walkthrough for the final presentation
 
 ## Authors
 
