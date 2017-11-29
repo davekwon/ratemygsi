@@ -60,6 +60,7 @@
       .sidenav {
         padding-top: 20px;
         background-color: #f1f1f1;
+
       }
       .rightnav {
         padding-right: 0px;
@@ -85,6 +86,11 @@
       .added-course-name:visited {
 
       }
+      .scroll{
+    height: 90%;
+    width: 100%;
+    overflow: scroll;
+  }
       
       /* On small screens, set height to 'auto' for sidenav and grid */
       @media screen and (max-width: 767px) {
@@ -169,21 +175,21 @@
         <div class="panel-body"><a href="#">Psychology 164</a></div>
       </div>
     </div>-->
+    <div class="scroll">
     <div class="added-course text-center">
     <% @courses.each do |r| %>
-	   <div class="added-course-name"><%= link_to r.name, course_path(r.id) %>
-       
-     </div><br/>
+	   <div class="added-course-name"><%= link_to r.name, course_path(r.id) %></div><br/>
     <% end %>
   </div>
+</div>
   </div> 
-
+</div>
 
 
 <div class="container rightnav">
     <div class="col-sm-9 text-center"> 
       <div class="name"><h1>Rate My GSI</h1>
-        <div class="description"><h5>A resource for UC Berkeley students.</div></h5></div>
+        <div class="description"<h5>A resource for UC Berkeley students.</div></h5></div>
       <h4>Don't see your course? Add it now! </h4>
       <h4>Then access the course from the left!</h4>
         
@@ -206,7 +212,8 @@
 </div>
 
 
-<div class="footer navbar-fixed-bottom">
+
+  <div class="footer navbar-fixed-bottom">
   <footer class="container-fluid text-center fixed-bottom">
   <p>Rate My GSI</p>
   </footer>
