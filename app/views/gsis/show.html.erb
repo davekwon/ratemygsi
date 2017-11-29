@@ -1,15 +1,18 @@
 <%= render "layouts/navigation" %>
 
 <div class="col-sm-12 text-center"> 
-<h1>
-  <strong>Name:</strong>
-  <%= @gsi.name %>
-</h1>
 
-<h1>
-  <strong>Course:</strong>
-  <%= @course.name %>
+<div class="name"><h1> <strong>Course:</strong>
+	  <%= @course.name %>
 </h1>
+</div>
+
+<div class="name">
+<h2>
+  <strong>GSI Name:</strong>
+  <%= @gsi.name %>
+</h2>
+</div>
 
 <% @reviewForThisCourse = Review.where(gsi: @gsi) %>
 
@@ -56,7 +59,7 @@
 	<br />
 	Concept: <%= f.number_field :concept %>
 	<br />
-	&nbsp
+	<br />
 	<%= f.submit %>
 <% end %>
 
