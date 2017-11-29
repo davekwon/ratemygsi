@@ -108,44 +108,9 @@
     <div class="container-fluid col-sm-3 sidenav">
       <div class="courses text-center"><h3>COURSES</h3></div>
   <div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"> Mathematics <span class="glyphicon glyphicon-chevron-down"></span></a>
-        </h4>
-      </div>
-      <div id="collapse1" class="panel-collapse collapse">
-        <div class="panel-body"><a href="#">Mathematics 53</a></div>
-        <div class="panel-body"><a href="#">Mathematics 54</a></div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Computer Science <span class="glyphicon glyphicon-chevron-down"></span></a>
-        </h4>
-      </div>
-      <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body"><a href="#">Computer Science 61a</a></div>
-        <div class="panel-body"><a href="#">Computer Science 61b</a></div>
-        <div class="panel-body"><a href="#">Computer Science 61c</a></div>
-        <div class="panel-body"><a href="#">Computer Science 70</a></div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Psychology <span class="glyphicon glyphicon-chevron-down"></span></a>
-        </h4>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body"><a href="#">Psychology 1</a></div>
-        <div class="panel-body"><a href="#">Psychology 2</a></div>
-        <div class="panel-body"><a href="#">Psychology 164</a></div>
-      </div>
-    </div>
+    
     <% @courses.each do |r| %>
-	<h1><%= link_to r.name, course_path(r.id) %></h1>
+	<h3><%= link_to r.name, course_path(r.id) %></h3>
 	<br />
 <% end %>
   </div> 
