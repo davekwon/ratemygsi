@@ -8,9 +8,9 @@ Finding a good course taught by a good professor is important. Finding a good GS
 
 ## Installation
 
-First run ```rails new ratemygsi``` in the directory of your choice to create your application and ```cd ratemygsi```. 
+In the directory of your choice, run ```git clone https://github.com/davekwon/ratemygsi.git```
 
-Once you're in the directory, run ```git clone https://github.com/davekwon/ratemygsi.git```
+Run ```bundle install```,  ```rake db:migrate```, and ```rake db:seed``` to set up the environment
 
 Run ```rails server``` and on your browser, go to ```localhost:3000``` and check our website!
 
