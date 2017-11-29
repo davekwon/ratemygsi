@@ -172,11 +172,13 @@
     </div>-->
     <div class="added-course text-center">
     <% @courses.each do |r| %>
-	   <div class="added-course-name"><%= link_to r.name, course_path(r.id) %></div><br/>
+	   <div class="added-course-name"><%= link_to r.name, course_path(r.id) %>
+       
+     </div><br/>
     <% end %>
   </div>
   </div> 
-</div>
+
 
 
 <div class="container rightnav">
