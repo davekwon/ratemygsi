@@ -1,9 +1,9 @@
 <%= render "layouts/navigation" %>
 
-<div class="col-sm-9 text-center"> 
+<div class="col-sm-12 text-center"> 
       <div class="name"><h3>Adding a new course to the database</h3>  </div>
 <%= simple_form_for @course, url: createCourse_path(@course), :method => :post  do |f| %>
-  <h5><%= f.input :name, label: 'Name for the new course' %> </h5>
+  <h4><%= f.input :name, label: 'Name for the new course' %> </h4>
   <button class="btn btn-default" type="button"><%= f.button :submit%> </button>
 
 

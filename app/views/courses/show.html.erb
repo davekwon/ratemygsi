@@ -1,8 +1,7 @@
 <%= render "layouts/navigation" %>
 
-<div class="col-sm-9 text-center"> 
+<div class="col-sm-12 text-center"> 
       <div class="name"><h2> <%= @course.name %>'s Reviews</h2> </div>
-
 
 
 <% if @gsiForThisCourse.size > 0 %>
@@ -53,13 +52,13 @@
 <%= form_for Gsi.new, url: course_path(@course) do |f| %>
 	Name: <%= f.text_field :name %>
 	<br />
-	<%= f.submit %>
+	<%= f.button :submit %>
 <% end %>
 
-Post new review //FIXME
 
 <br />
-<%= link_to "Homepage", root_path %>
+<button class="btn btn-default" type="button"><%= link_to "Homepage", root_path %></button>
+
 
 </div>
 
