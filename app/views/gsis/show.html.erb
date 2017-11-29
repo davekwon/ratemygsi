@@ -5,9 +5,7 @@
 <div class="name"><h1> <strong>Course:</strong>
 	  <%= @course.name %>
 </h1>
-</div>
 
-<div class="name">
 <h2>
   <strong>GSI Name:</strong>
   <%= @gsi.name %>
@@ -47,33 +45,39 @@
 
 
 <h2> Leave a new review </h2>
-
+<div class="description">
+		<br />
+	<h5> Note: Please rate your GSI for his/her Clarity/Attitude/Problem/Concept from the scale of 1-10. </h5> 
 <%= form_for Review.new, url: gsi_path(@gsi) do |f| %>
 	Comment: <%= f.text_area :content %>
 	<br />
-	Clarity: <%= f.number_field :clarity %>
+	Clarity: <%= f.number_field :clarity, min: 1, max: 10, step: 1 %>
 	<br />
-	Attitude: <%= f.number_field :attitude %>
+	Attitude: <%= f.number_field :attitude, min: 1, max: 10, step: 1 %>
 	<br />
-	Problem: <%= f.number_field :problem %>
+	Problem: <%= f.number_field :problem, min: 1, max: 10, step: 1 %>
 	<br />
-	Concept: <%= f.number_field :concept %>
+	Concept: <%= f.number_field :concept, min: 1, max: 10, step: 1 %> 
 	<br />
 	<br />
 	<%= f.submit %>
 <% end %>
+
+</div>
 
 <p></p>
 &nbsp
 <button class="btn btn-default" type="button"><%= link_to 'Back', course_path(@course) %> </button>| 
 <button class="btn btn-default" type="button"><%= link_to 'Homepage', root_path %></button>
 
-</div>
-
+		<br />
+				<br />
 <div class="footer navbar-fixed-bottom">	
   <footer class="container-fluid text-center fixed-bottom">
   <p>Rate My GSI</p>
   </footer>
+</div>
+
 </div>
 
 
