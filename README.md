@@ -19,14 +19,30 @@ First run ```rails new ratemygsi``` in the directory of your choice to create yo
 
 What models were used to build this web application?
 
-**Course
-
-**GSI
-
-**Review
-
-**User
-
+**Course**
+```
+name:string
+```
+**GSI**
+```
+name:string
+course:string
+```
+**Review**
+```
+content:text
+clarity:integer
+attitude:integer
+problem:integer (score of how much does the GSI focus on problem solving)
+concept:interger (score of how much does the GSI focus on explaining concepts)
+gsi_id:integer
+user_id:integer
+```
+**User**
+```
+email:string
+username:string
+```
 
 ## Authors
 
