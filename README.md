@@ -1,7 +1,9 @@
 # Rails Decal Project 2: RateMyGSI
 
 <strong>Title</strong>: RateMyGSI
+
 <strong> Team Members</strong>: Dave Kwon, Mesut Yang, Shangjun Jiang, Meejin Choi
+
 <strong> Demolink </strong>:
 
 Using this application, students can rate their GSIs and leave a comment. Students can also search by GSI name, read other students’ reviews, and vote whether the review was helpful or not helpful.
@@ -58,7 +60,7 @@ Then run ```rails server``` and on your browser, go to ```localhost:3000``` and 
 ```
 - username (string)
 - email(string) 
-- reviews (string) many reviews for different GSIs
+- reviews (string): many reviews for different GSIs
 - user-id (integer)
 - upvote
 ```
