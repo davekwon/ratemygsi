@@ -19,7 +19,7 @@ Run ```rails server``` and on your browser, go to ```localhost:3000``` and check
 
 * Ruby on Rails - The web framework used
 * devise - Ruby gem for user authenticiation
-* HTML/CSS - Web design
+* HTML/CSS/JavaScript/Bootstrap - Web design
 
 
 ## Models
