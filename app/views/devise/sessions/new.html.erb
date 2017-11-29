@@ -126,6 +126,7 @@
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
               <li><a href="<%=new_user_session_path%>">Login</a></li>
+              <li><a href="<%=new_user_session_path%>">Logout</a></li>
             </ul>
           </div>
         </div>
@@ -154,14 +155,19 @@
         <div class="actions">
           <%= f.submit "Log in" %>
         </div>
+
+
       <% end %>
 
       <%= render "devise/shared/links" %>
     </div>
 
-      <footer class="container-fluid text-center fixed-bottom">
-      <p>Rate My GSI</p>
-      </footer>
-  
   </body>
+
+  <div class="footer navbar-fixed-bottom">  
+  <footer class="container-fluid text-center fixed-bottom">
+  <p>Rate My GSI</p>
+  </footer>
+</div>
+
 </html>
