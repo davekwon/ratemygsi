@@ -36,16 +36,16 @@ Then run ```rails server``` and on your browser, go to ```localhost:3000``` and 
 ## Models
 
 **Course**
-
+```
 - name (string)
-
+```
 **GSI**
-
+```
 - name(string)
 - course(string): can have many courses
-
+```
 **Review**
-
+```
 - content(text)
 - clarity (integer): 1-10
 - attitude (integer): 1-10
@@ -53,15 +53,15 @@ Then run ```rails server``` and on your browser, go to ```localhost:3000``` and 
 - concept (interger): 1-10 score of how much does the GSI focus on explaining concepts
 - gsi_id (integer): unique
 - user_id (integer)
-
+```
 **User**
-
+```
 - username (string)
 - email(string) 
 - reviews (string) many reviews for different GSIs
 - user-id (integer)
 - upvote
-
+```
 
 
 ## Features
