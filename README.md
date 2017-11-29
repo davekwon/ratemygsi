@@ -2,10 +2,17 @@
 
 Using this application, students can rate their GSIs and leave a comment. Students can also search by GSI name, read other students’ reviews, and vote whether the review was helpful or not helpful.
 
+# Motivation
 
-## Getting Started
+Finding a good course taught by a good professor is important. Finding a good GSI(TA), however, can be as important as that because students often learn from diecussion sections/labs as much as what they learn from lecture. There are lots of review websites for professors and courses but none for GSIs(TAs). We thought this website would serve Berkeley students who want to get to know about GSIs' teadching styles to help them find an ideal GSI depending on individual's learning style.
 
-First run ```rails new ratemygsi``` in the directory of your choice to create your application and ```cd ratemygsi```. Then run ```rails server``` to check our website.
+## Installation
+
+First run ```rails new ratemygsi``` in the directory of your choice to create your application and ```cd ratemygsi```. 
+
+Once you're in the directory, run ```git clone https://github.com/davekwon/ratemygsi.git```
+
+Run ```rails server``` and on your browser, go to ```localhost:3000``` and check our website!
 
 
 ## Built With
