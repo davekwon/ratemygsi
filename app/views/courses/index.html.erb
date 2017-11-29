@@ -60,7 +60,7 @@
       .sidenav {
         padding-top: 20px;
         background-color: #f1f1f1;
-        height: 700px;
+
       }
       .rightnav {
         padding-right: 0px;
@@ -78,6 +78,19 @@
 
       }
 
+      .added-course {
+        text-decoration: none; 
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+      }
+      .added-course-name:visited {
+
+      }
+      .scroll{
+    height: 90%;
+    width: 100%;
+    overflow: scroll;
+  }
       
       /* On small screens, set height to 'auto' for sidenav and grid */
       @media screen and (max-width: 767px) {
@@ -90,7 +103,25 @@
     </style>
 </head>
 
-<%= render "layouts/navigation" %>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Rate My GSI</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="<%=new_user_session_path%>">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <!--
 <div class="container-fluid text-center">    
   <div class="row content">
@@ -104,15 +135,53 @@
       </ul><br>
     </div>
 -->
-  <div class="container-fluid everything">
-    <div class="container-fluid col-sm-3 sidenav">
+   <!--<div class="container-fluid everything">-->
+    <div class="container col-sm-3 sidenav">
       <div class="courses text-center"><h3>COURSES</h3></div>
-  <div class="panel-group" id="accordion">
-    
+  <!--<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"> Mathematics <span class="glyphicon glyphicon-chevron-down"></span></a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body"><a href="#">Mathematics 53</a></div>
+        <div class="panel-body"><a href="#">Mathematics 54</a></div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Computer Science <span class="glyphicon glyphicon-chevron-down"></span></a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body"><a href="#">Computer Science 61a</a></div>
+        <div class="panel-body"><a href="#">Computer Science 61b</a></div>
+        <div class="panel-body"><a href="#">Computer Science 61c</a></div>
+        <div class="panel-body"><a href="#">Computer Science 70</a></div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Psychology <span class="glyphicon glyphicon-chevron-down"></span></a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body"><a href="#">Psychology 1</a></div>
+        <div class="panel-body"><a href="#">Psychology 2</a></div>
+        <div class="panel-body"><a href="#">Psychology 164</a></div>
+      </div>
+    </div>-->
+    <div class="scroll">
+    <div class="added-course text-center">
     <% @courses.each do |r| %>
-	<h3><%= link_to r.name, course_path(r.id) %></h3>
-	<br />
-<% end %>
+	   <div class="added-course-name"><%= link_to r.name, course_path(r.id) %></div><br/>
+    <% end %>
+  </div>
+</div>
   </div> 
 </div>
 
@@ -121,7 +190,8 @@
     <div class="col-sm-9 text-center"> 
       <div class="name"><h1>Rate My GSI</h1>
         <div class="description"<h5>A resource for UC Berkeley students.</div></h5></div>
-      <h4>Don't see your course? Add it now!</h4>
+      <h4>Don't see your course? Add it now! </h4>
+      <h4>Then access the course from the left!</h4>
         
 
             <!--<datalist id="Country">
@@ -143,9 +213,11 @@
 
 
 
+  <div class="footer navbar-fixed-bottom">
   <footer class="container-fluid text-center fixed-bottom">
   <p>Rate My GSI</p>
   </footer>
+</div>
   
   </body>
 </html>

@@ -1,12 +1,12 @@
 <%= render "layouts/navigation" %>
 
 
-<h1><%= @course.name %>'s Reviews</h1>
-
+<div class="col-sm-12 text-center"> 
+      <div class="name"><h1> <%= @course.name %>'s Reviews</h1> </div>
 
 
 <% if @gsiForThisCourse.size > 0 %>
-	<h2>Browse by GSIs</h2>
+	<div class="name"><h2>Browse by GSIs</h2></div>
 	<% @gsiForThisCourse.each do |g| %>
 		<h3> <%= link_to g.name, gsi_path(g) %> </h3>
 		<br />
@@ -53,9 +53,26 @@
 <%= form_for Gsi.new, url: course_path(@course) do |f| %>
 	Name: <%= f.text_field :name %>
 	<br />
-	<%= f.submit %>
+	<%= f.button :submit %>
 <% end %>
 
 
 <br />
-<%= link_to "Homepage", root_path %>
+<button class="btn btn-default" type="button"><%= link_to "Homepage", root_path %></button>
+
+
+	<div class="chart-container">
+
+	</div>
+
+
+
+<div class="footer navbar-fixed-bottom">	
+
+  <footer class="container-fluid text-center fixed-bottom">
+  <p>Rate My GSI</p>
+  </footer>
+</div>
+
+</div>
+
