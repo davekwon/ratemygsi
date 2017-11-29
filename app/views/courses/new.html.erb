@@ -1,6 +1,8 @@
 <%= render "layouts/navigation" %>
 
 <div class="col-sm-12 text-center"> 
+
+	<img src="https://ced.berkeley.edu/images/uploads/content/cal-centraL.jpg">
       <div class="name"><h3>Adding a new course to the database</h3>  </div>
 <%= simple_form_for @course, url: createCourse_path(@course), :method => :post  do |f| %>
 
