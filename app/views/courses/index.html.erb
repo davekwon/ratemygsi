@@ -39,31 +39,15 @@
         word-spacing: 2px;
         padding: 15px;
         padding-bottom: 30px; 
-        color:  #003262;
       }
       .description {
         font-family: 'Roboto', sans-serif;
         text-transform: none; 
-        color: #FDB515;
       }
       .glyphicon {
     font-size: 10px;
-  }
 
-h3 {
-    color:#003262;
-  }
-h2 {
-    color:#003262;
-  }
-
-h4 {
-    color:#003262;
-  }
-h5 {
-    color:#003262;
-  }
-
+}
 .button {
 	margin: auto;
     width: 50%;
@@ -76,7 +60,7 @@ h5 {
       .sidenav {
         padding-top: 20px;
         background-color: #f1f1f1;
-
+        height: 700px;
       }
       .rightnav {
         padding-right: 0px;
@@ -102,11 +86,6 @@ h5 {
       .added-course-name:visited {
 
       }
-      .scroll{
-    height: 90%;
-    width: 100%;
-    overflow: scroll;
-  }
       
       /* On small screens, set height to 'auto' for sidenav and grid */
       @media screen and (max-width: 767px) {
@@ -120,7 +99,23 @@ h5 {
 </head>
 
 
-<%= render "layouts/navigation" %>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Rate My GSI</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="<%=new_user_session_path%>">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <!--
 <div class="container-fluid text-center">    
@@ -175,21 +170,21 @@ h5 {
         <div class="panel-body"><a href="#">Psychology 164</a></div>
       </div>
     </div>-->
-    <div class="scroll">
     <div class="added-course text-center">
     <% @courses.each do |r| %>
-	   <div class="added-course-name"><%= link_to r.name, course_path(r.id) %></div><br/>
+	   <div class="added-course-name"><%= link_to r.name, course_path(r.id) %>
+       
+     </div><br/>
     <% end %>
   </div>
-</div>
   </div> 
-</div>
+
 
 
 <div class="container rightnav">
     <div class="col-sm-9 text-center"> 
       <div class="name"><h1>Rate My GSI</h1>
-        <div class="description"<h5>A resource for UC Berkeley students.</div></h5></div>
+        <div class="description"><h5>A resource for UC Berkeley students.</div></h5></div>
       <h4>Don't see your course? Add it now! </h4>
       <h4>Then access the course from the left!</h4>
         
@@ -207,16 +202,12 @@ h5 {
           </button>
           </a>
         </div>
-
-    <img src="http://slc.berkeley.edu/sites/default/files/pictures/frontbackground/room.png" width="500" height="300">
     </div>
-
   </div>
 </div>
 
 
-
-  <div class="footer navbar-fixed-bottom">
+<div class="footer navbar-fixed-bottom">
   <footer class="container-fluid text-center fixed-bottom">
   <p>Rate My GSI</p>
   </footer>
