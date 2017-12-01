@@ -81,17 +81,24 @@
       .added-course {
         text-decoration: none; 
         font-family: 'Roboto', sans-serif;
-        font-size: 20px;
+        font-size: 18px;
+        padding: -5px;
+        padding: 15px;
+
       }
-      .added-course-name:visited {
+      .added-course-name {
+        text-transform: uppercase;
+        background-color: white;
+        border-color: gray; 
 
       }
       
       /* On small screens, set height to 'auto' for sidenav and grid */
       @media screen and (max-width: 767px) {
         .sidenav {
-          height: auto;
-          padding: 15px;
+          height: 160px;
+          padding: 10px;
+          overflow: scroll;
         }
         .row.content {height:auto;} 
       }

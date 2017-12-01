@@ -115,23 +115,7 @@
 </head>
 
 <body>
-      <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>                        
-            </button>
-            <a class="navbar-brand" href="#">Rate My GSI</a>
-          </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="<%=new_user_session_path%>">Login</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <%= render "layouts/navigation" %>
 
       <div class="header text-center"><h1>Sign up</h1></div>
 
@@ -164,6 +148,7 @@
   </div>
 
   <div class="actions">
+    
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
@@ -171,9 +156,7 @@
 <%= render "devise/shared/links" %>
     </div>
 
-      <footer class="container-fluid text-center fixed-bottom">
-      <p>Rate My GSI</p>
-      </footer>
+      
   
   </body>
 

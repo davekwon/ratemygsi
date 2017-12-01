@@ -19,11 +19,9 @@ An application where students can rate their GSIs and leave a comment. Students 
 
 ## Installation
 
-In the directory of your choice, run ```git clone https://github.com/davekwon/ratemygsi.git```
+In the directory of your choice, run ```git clone https://github.com/davekwon/ratemygsi.git``` and ```cd ratemygsi```
 
-Run ```bundle install```,  ```rake db:migrate```, and ```rake db:seed``` to set up the environment
-
-Run ```rails db:migrate``` and ```rake db:seed```
+Run ```bundle install```,  ```rake db:migrate db:seed``` to set up the gem and database
 
 Then run ```rails server``` and on your browser, go to ```localhost:3000``` and check our website!
 
@@ -69,16 +67,18 @@ Then run ```rails server``` and on your browser, go to ```localhost:3000``` and 
 ## Features
 
 
-- Users must sign up with an email (verification email will be sent) to leave a review. However, users can look for reviews without signing in/up.
-- Users can rate their GSIs and leave a comment, and also edit or delete their rate/comment
-- Users can search by GSI name, read the reviews, and upvote whether a review was helpful or not helpful
+- Users can browse the reviews without signing in / signing up.
+- Users must sign in or sign up with username and email to leave a review. If attemped to do so without signing in, they will be directed to the sign-in page.
+- Once signed in, users can rate their GSIs and leave a comment
+- Users can look up by GSI name on course page, read the reviews, and upvote whether a review was helpful
+- Each user can only vote on a particular review once as the upvote model keep track of uniquness
 		
         
         
 ## Division of Labor
 
 - Dave Kwon & Mesut Yang: Make structural design of the website (back-end, made models and associations, made seeds)
-- Shangjun Jiang & Meejin Choi: Make user interface design of the website (front-end, HTML/CSS/JavaScript/bootstrap)
+- Shangjun Jiang & Meejin Choi: Make user interface design of the website (front-end, HTML/CSS/JavaScript/bootstrap), also created the walkthrough for the final presentation
 
 ## Authors
 
